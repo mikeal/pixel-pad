@@ -1,0 +1,25 @@
+{
+  "name": "pixel-pad",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bel": "^4.5.0",
+    "element-class": "^0.2.2",
+    "funky": "^2.2.0"
+  },
+  "devDependencies": {
+    "babili": "0.0.8",
+    "browserify": "^13.1.1",
+    "budo": "^9.2.2",
+    "standard": "^8.5.0"
+  },
+  "scripts": {
+    "test": "standard",
+    "build": "browserify index.js | babili -o bundle.js",
+    "start": "budo index.js:bundle.js"
+  },
+  "keywords": [],
+  "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (http://www.mikealrogers.com)",
+  "license": "Apache-2.0"
+}
