@@ -130,15 +130,23 @@ function write (data) {
   window.parent.postMessage(data, '*')
 }
 
+function setHeight (creator) {
+  let height = +document.querySelector('pixel-app').offsetHeight
+  if (creator) height += 80
+  if (window.parent) window.parent.postMessage({height}, '*')
+}
+
 function creatorInit (elem, rows) {
   let app = elem.querySelector('pixel-app')
   elem.querySelector('div.pixel-add-row').onclick = () => {
     rows = fill(rows.length + 1, rows[0].length)
     app.update(rows)
+    setHeight(true)
   }
   elem.querySelector('div.pixel-add-column').onclick = () => {
     rows = fill(rows.length, rows[0].length + 1)
     app.update(rows)
+    setHeight(true)
   }
   elem.querySelector('div.pixel-update-url').onclick = () => {
     let search = `?rows=${rows.length}&columns=${rows[0].length}`
@@ -158,6 +166,7 @@ ${creatorInit}
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 20px;
   }
   div.pixel-add-button {
     font-size: 40px;
@@ -181,6 +190,9 @@ ${creatorInit}
     cursor: pointer;
     padding-left: 5px;
     align-self: flex-start;
+  }
+  pixel-app-creator pixel-app {
+    padding-top:20px;
   }
   </style>
   ${appView}
@@ -216,8 +228,10 @@ if (url.searchParams.has('rows')) {
   let columns = +url.searchParams.get('columns')
   let elem = padView(fill(rows, columns))
   document.getElementById('center-container').appendChild(elem)
+  let height = document.body.offsetHeight
+  if (window.parent) window.parent.postMessage({height}, '*')
 } else {
-  let elem = creatorView(fill(5, 5))
+  let elem = creatorView(fill(7, 15))
   document.getElementById('center-container').appendChild(elem)
 }
 
