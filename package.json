@@ -6,7 +6,7 @@
   "dependencies": {
     "bel": "^4.5.0",
     "element-class": "^0.2.2",
-    "funky": "^2.2.0"
+    "funky": "^2.3.0"
   },
   "devDependencies": {
     "babili": "0.0.8",

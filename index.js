@@ -1,5 +1,5 @@
 /* globals URL */
-const funky = require('../funky')
+const funky = require('funky')
 const elementClass = require('element-class')
 
 let _default = 'white'
