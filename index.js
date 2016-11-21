@@ -125,8 +125,8 @@ const padView = funky`
 `
 
 function write (data) {
-  data.app = 'pixel-pad',
-  data.api = 'https://TODO/api/v1',
+  data.app = 'pixel-pad'
+  data.api = 'https://TODO/api/v1'
   window.parent.postMessage(data, '*')
 }
 
