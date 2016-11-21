@@ -1,7 +1,7 @@
 {
   "name": "pixel-pad",
   "version": "0.1.0",
-  "description": "",
+  "description": "Collaborative pixel drawing for Bong Bong.",
   "main": "index.js",
   "dependencies": {
     "bel": "^4.5.0",
