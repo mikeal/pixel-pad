@@ -34,7 +34,6 @@ npm run build
 copy_assets ../build
 
 cd ../build
-echo "rollcall.audio" > CNAME
 
 git init
 git config user.name "CI"

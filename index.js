@@ -25,6 +25,14 @@ const rowView = funky`
   ${row => row.map(pixelView)}
 </pixel-app-row>
 `
+window.addEventListener('message', msg => {
+  let data = msg.data
+  if (!msg.data) return
+  let value = data.data
+  if (!value) return
+  let pad = document.querySelector('pixel-app')
+  pad.setPixel(value.row, value.column, value.color)
+})
 
 function init (elem, rows) {
   elem.setPixel = (row, column, color) => {
@@ -39,6 +47,7 @@ function init (elem, rows) {
 
   let setPixel = (row, column) => {
     let color = getColor()
+    write({data: {row, column, color}})
     elem.setPixel(row, column, color)
   }
 
