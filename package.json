@@ -4,15 +4,15 @@
   "description": "Collaborative pixel drawing for Bong Bong.",
   "main": "index.js",
   "dependencies": {
-    "bel": "^4.5.0",
+    "bel": "^5.0.2",
     "element-class": "^0.2.2",
     "funky": "^2.3.0"
   },
   "devDependencies": {
-    "babili": "0.0.8",
-    "browserify": "^13.1.1",
-    "budo": "^9.2.2",
-    "standard": "^8.5.0"
+    "babili": "0.1.4",
+    "browserify": "^14.4.0",
+    "budo": "^10.0.3",
+    "standard": "^10.0.2"
   },
   "scripts": {
     "test": "standard",
